@@ -1,0 +1,38 @@
+#sidebar {
+    min-width: 250px !important;
+}
+
+.closebtn:hover {
+    color: red;
+    scale: 1.5;
+    transition: all 0.5s ease-in-out;
+}
+
+.sidebtn {
+    position: relative;
+    z-index: 1;
+}
+
+.sidebtn::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: rgb(76, 76, 211);
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.sidebtn:hover::before {
+    transform: scaleX(1);
+    transition: all 0.5s ease-in-out;
+}
+
+.sidebtn:hover {
+    color: white;
+    transition: all 0.3s ease-in-out;
+
+}

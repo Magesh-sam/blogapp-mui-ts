@@ -1,0 +1,31 @@
+.selectwrapper {
+    width: 150px;
+    background: transparent;
+    margin-right: 50px !important;
+    background: #fff;
+}
+
+.categories {
+    color: black !important;
+    font-weight: bold;
+}
+
+.writebtn {
+    position: relative;
+}
+
+.writebtn::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 2px white solid;
+    transform: scaleX(0);
+}
+
+.writebtn:hover::before {
+    transform: scaleX(1);
+    transition: all 0.3s ease-in-out;
+}

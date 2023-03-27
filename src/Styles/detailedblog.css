@@ -1,0 +1,21 @@
+.detailedBlog {
+    width: 70%;
+    margin: auto;
+    padding: 30px 30px;
+
+}
+
+.detailedBlog .detailedBody {
+    padding-top: 30px;
+    margin-left: 50px;
+    text-align: justify;
+    padding-bottom: 75px;
+
+}
+
+.detailedBlog .gotohome:hover {
+    background: green;
+    color: white;
+    transition: background 0.5s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}

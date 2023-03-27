@@ -1,0 +1,41 @@
+.bloglistwrapper {
+    width: 80%;
+    margin: auto;
+    padding: 10px 30px;
+    margin-bottom: 50px;
+    padding-bottom: 75px;
+}
+
+.blogtitle {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.editbtn,
+.deletebtn {
+    border-radius: 50%;
+
+}
+
+.editbtn:hover {
+    background: blue !important;
+    color: white;
+    transition: 0.3s all ease-in-out;
+}
+
+.deletebtn:hover {
+    background: red !important;
+    color: white;
+    transition: 0.3s all ease-in-out;
+
+}
+
+.viewmorebtn:hover {
+    font-weight: bold;
+}
+
+.blogheading{
+    border: none;
+    background: transparent;
+}

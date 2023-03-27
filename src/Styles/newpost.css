@@ -1,0 +1,81 @@
+.formpaper {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.newpostform {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 30px;
+}
+
+.forminput::placeholder {
+    font-size: 30px !important;
+}
+
+.submitbtn {
+    width: 180px;
+    align-self: center;
+    position: relative;
+    z-index: 1;
+}
+
+.submitbtn::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #4C4CD3;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.submitbtn:hover::before {
+    transform: scaleX(1);
+    transition: all 0.5s ease-in-out;
+}
+
+.submitbtn:hover {
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+.cancelbtn {
+    width: 180px;
+    align-self: center;
+    position: relative;
+    z-index: 1;
+}
+
+.cancelbtn::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #e02929;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.cancelbtn:hover::before {
+    transform: scaleX(1);
+    transition: all 0.5s ease-in-out;
+}
+
+.cancelbtn:hover {
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.btngrp {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
