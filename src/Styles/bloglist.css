@@ -8,8 +8,10 @@
 
 .blogtitle {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 25px;
+
 }
 
 .editbtn,
@@ -38,4 +40,11 @@
 .blogheading{
     border: none;
     background: transparent;
+}
+
+@media (width<=630px) {
+    .blogtitle .blogheading{
+        font-size: 40px;
+    }
+
 }

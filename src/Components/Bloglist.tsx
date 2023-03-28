@@ -37,10 +37,9 @@ export const Bloglist: FC<IBlogList> = ({
     setBlogList(filteredBlogList);
   };
 
-  const handleViewmore = (index: number,title:string) => {
+  const handleViewmore = (index: number) => {
     setBlogIndex(index);
     nav(`/blog`);
-    window.location.href=`${window.location.href}/${title}`;
   };
 
   const handleEdit = (blogId: string) => {
@@ -49,7 +48,6 @@ export const Bloglist: FC<IBlogList> = ({
     nav("/edit");
   };
 
-  // console.log(params.title);
   return (
     <Paper className="bloglistwrapper" elevation={5}>
       <Typography
@@ -69,7 +67,7 @@ export const Bloglist: FC<IBlogList> = ({
           <Container>
             <Box className="blogtitle">
               <Typography className="blogheading" onClick={() => {
-                  handleViewmore(index,blog.title);
+                  handleViewmore(index);
                 }} component="button" align="left" variant="h3" sx={{ m: 2 }}>
                 {blog.title.toUpperCase()}
               </Typography>
@@ -104,7 +102,7 @@ export const Bloglist: FC<IBlogList> = ({
               <Button
                 className="viewmorebtn"
                 onClick={() => {
-                  handleViewmore(index,blog.title);
+                  handleViewmore(index);
                 }}
               >
                 View more...
