@@ -16,7 +16,7 @@ import DeleteSharpIcon from "@mui/icons-material/DeleteSharp";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import { Blog } from "./Interfaces";
-import { useNavigate , useLocation} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface IBlogList {
   blogList: Blog[];
@@ -30,16 +30,15 @@ export const Bloglist: FC<IBlogList> = ({
   setBlogIndex,
 }) => {
   const nav = useNavigate();
-  const loc = useLocation();
   const handleDelete = (blogId: string) => {
     const updatedBlog = [...blogList];
     const filteredBlogList = updatedBlog.filter((blog) => blog.id !== blogId);
     setBlogList(filteredBlogList);
   };
 
-  const handleViewmore = (index: number) => {
+  const handleViewmore = (index: number, title: string) => {
     setBlogIndex(index);
-    nav(`/blog`);
+    nav(`/blog/${title}`);
   };
 
   const handleEdit = (blogId: string) => {
@@ -66,9 +65,16 @@ export const Bloglist: FC<IBlogList> = ({
         <ListItem key={index}>
           <Container>
             <Box className="blogtitle">
-              <Typography className="blogheading" onClick={() => {
-                  handleViewmore(index);
-                }} component="button" align="left" variant="h3" sx={{ m: 2 }}>
+              <Typography
+                className="blogheading"
+                onClick={() => {
+                  handleViewmore(index, blog.title);
+                }}
+                component="button"
+                align="left"
+                variant="h3"
+                sx={{ m: 2 }}
+              >
                 {blog.title.toUpperCase()}
               </Typography>
               <span className="likesnumber">
@@ -102,7 +108,7 @@ export const Bloglist: FC<IBlogList> = ({
               <Button
                 className="viewmorebtn"
                 onClick={() => {
-                  handleViewmore(index);
+                  handleViewmore(index, blog.title);
                 }}
               >
                 View more...

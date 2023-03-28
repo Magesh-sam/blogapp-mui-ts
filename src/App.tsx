@@ -1,5 +1,5 @@
 import "./App.css";
-
+import { Typography, Button } from "@mui/material";
 import { useState } from "react";
 import { NavBar } from "./Components/NavBar";
 import { Bloglist } from "./Components/Bloglist";
@@ -11,7 +11,6 @@ import { DetailedBlog } from "./Components/DetailedBlog";
 import { Categories } from "./Components/Categories";
 import { EditBlog } from "./Components/EditBlog";
 import ScrollToTop from "react-scroll-to-top";
-
 
 const initialBlogs: Blog[] = [
   {
@@ -94,10 +93,10 @@ function App() {
         setIsDrawerOpen={setIsDrawerOpen}
         setCategory={setCategory}
       />
-      <ScrollToTop title="scroll to top" className="scrolltotop"/>
+      <ScrollToTop title="scroll to top" className="scrolltotop" />
       <Routes>
         <Route
-          path="/"
+          path=""
           element={
             <Bloglist
               setBlogIndex={setBlogIndex}
@@ -111,17 +110,24 @@ function App() {
           element={<NewPost blogList={blogList} setBlogList={setBlogList} />}
         ></Route>
         <Route
-          path="/blog"
+          path="/blog/:title"
           element={
             <DetailedBlog blogList={filteredBlogs} blogIndex={blogIndex} />
           }
         ></Route>
         <Route
-          path="/category"
-          element={<Categories category={category} blogList={filteredBlogs} setBlogList={setBlogList} setBlogIndex={setBlogIndex} />}
+          path="category"
+          element={
+            <Categories
+              category={category}
+              blogList={filteredBlogs}
+              setBlogList={setBlogList}
+              setBlogIndex={setBlogIndex}
+            />
+          }
         ></Route>
         <Route
-          path="/edit"
+          path="edit"
           element={
             <EditBlog
               blogIndex={blogIndex}
@@ -130,6 +136,16 @@ function App() {
             />
           }
         ></Route>
+        <Route
+          path="*"
+          element={
+            <>
+              <Typography variant="h3" align="center">
+                Error! 404 Page Not Found
+              </Typography>
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
